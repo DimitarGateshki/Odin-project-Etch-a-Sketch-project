@@ -41,7 +41,7 @@ function clearTheGrid(){
    }
 }
 
-let button1=document.querySelector("#a");
+let button1=document.querySelector("#col");
 let button2=document.querySelector("#reset");
 let button3=document.querySelector("#resize");
 
@@ -51,8 +51,20 @@ button3.addEventListener("click",resetTheGrid);
 
 let container=document.querySelector(".container");
 
+let color="#000000";
+
+function generateColor() {
+    color= "#"+(Math.random()*0xffffff<<0).toString(16);
+    document.querySelector(".color").style.backgroundColor=color;
+    if (color.length<7) {
+        generateColor();
+    }
+}
+
+button1.addEventListener("click",generateColor);
+
 container.addEventListener("mouseover", function( event ) {
-    event.target.style.backgroundColor = "orange";
+    event.target.style.backgroundColor = color;
   });
 
 
