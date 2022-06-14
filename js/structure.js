@@ -33,10 +33,21 @@ function resetTheGrid() {
   
 }
 
+function clearTheGrid(){
+   var divs= document.querySelectorAll(".collElement");
+   for (let i = 0; i < divs.length; i++) {
+       divs[i].style.backgroundColor="white";
+       
+   }
+}
 
-let button=document.querySelector(".reset");
+let button1=document.querySelector("#a");
+let button2=document.querySelector("#reset");
+let button3=document.querySelector("#resize");
 
-button.addEventListener("click",resetTheGrid);
+button2.addEventListener("click",clearTheGrid);
+button3.addEventListener("click",resetTheGrid);
+
 
 let container=document.querySelector(".container");
 
